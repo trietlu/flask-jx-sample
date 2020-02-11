@@ -15,8 +15,8 @@ pipelineConfig:
           name: code-scan
       postBuild:
         preSteps:
-        - sh: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && echo $APP_NAME:$PREVIEW_VERSION 
-          name: container-image-scan-debug 
+        - sh: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && apt-get install jq && echo $APP_NAME:$PREVIEW_VERSION 
+        - sh: aws ecr describe-image-scan-findings --repository-name trietlu/flask-jx-sample --image-id imageTag=$PREVIEW_VERSION --region us-east-2 --max-items 50 --page-size 50 | jq '.imageScanFindings.findingSeverityCounts.HIGH'
     release:
       build:
         preSteps:
