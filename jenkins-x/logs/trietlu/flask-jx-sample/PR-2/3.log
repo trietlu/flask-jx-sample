@@ -1,0 +1,173 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-bkzg4[0m
+{"level":"warn","ts":1581446672.5130403,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581446672.5133102,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-7vrfm[0m
+{"level":"warn","ts":1581446673.4691868,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581446673.4712172,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-pr-2-se-rvc2v-ftc5b[0m
+{"level":"warn","ts":1581446679.5366576,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581446679.819704,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/flask-**-sample.git @ master in path /workspace/source"}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:5113b82e5e46d7508e7cab97cee654f5041b316b,2:e9c42b7208063832667b3f4ae6da8487d818135d
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git fetch origin --unshallow e9c42b7208063832667b3f4ae6da8487d818135d: 5113b82e5e46d7508e7cab97cee654f5041b316b:
+DEBUG: ran git fetch --unshallow origin e9c42b7208063832667b3f4ae6da8487d818135d: 5113b82e5e46d7508e7cab97cee654f5041b316b: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 5113b82e5e46d7508e7cab97cee654f5041b316b
+DEBUG: ran git reset --hard 5113b82e5e46d7508e7cab97cee654f5041b316b in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git merge e9c42b7208063832667b3f4ae6da8487d818135d
+DEBUG: ran git merge e9c42b7208063832667b3f4ae6da8487d818135d in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 5113b82e5e46d7508e7cab97cee654f5041b316b..HEAD
+Merged SHA 01f0b5c7f94123d262459019cd7a40ccd6f0e994 with commit message 'Merge commit 'e9c42b7208063832667b3f4ae6da8487d818135d'' into base branch master
+Merged SHA e9c42b7208063832667b3f4ae6da8487d818135d with commit message 'debugging ...' into base branch master
+Merged SHA 069f446a635e919342636d48298621845a358eaa with commit message 'debugging ...' into base branch master
+Merged SHA cd0a5c5979a4534d57ea4d809f579b63b5a99fae with commit message 'debugging ...' into base branch master
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-code-scan[0m
+WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
+Collecting python-taint
+  Downloading https://files.pythonhosted.org/packages/5c/79/5b70d3299cb7dea63e2b015651c5c7507d723911ff2837e104ebd7079491/python_taint-0.42-py3-none-any.whl (52kB)
+Installing collected packages: python-taint
+Successfully installed python-taint-0.42
+No vulnerabilities found.
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Executing 3 build triggers                   
+[36mINFO[0m[0000] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0000] Checking for cached layer 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:d59b97174bce710b82c453d1c61c69fabd876428b1d9b57a93fe29aaa79d6fc7... 
+[36mINFO[0m[0000] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0000] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0012] Taking snapshot of full filesystem...        
+[36mINFO[0m[0019] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0019] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0019] Taking snapshot of files...                  
+[36mINFO[0m[0019] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0019] cmd: /bin/sh                                 
+[36mINFO[0m[0019] args: [-c pip install --no-cache-dir -r requirements.txt] 
+Collecting Flask (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl (94kB)
+Collecting Werkzeug>=0.15 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl (298kB)
+Collecting click>=5.1 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting itsdangerous>=0.24 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Jinja2>=2.10.1 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl (126kB)
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10.1->Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: Werkzeug, click, itsdangerous, MarkupSafe, Jinja2, Flask
+Successfully installed Flask-1.1.1 Jinja2-2.11.1 MarkupSafe-1.1.1 Werkzeug-1.0.0 click-7.0 itsdangerous-1.1.0
+You are using pip version 10.0.1, however version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0021] Taking snapshot of full filesystem...        
+[36mINFO[0m[0024] Using files from context: [/workspace/source] 
+[36mINFO[0m[0024] COPY . /usr/src/app                          
+[36mINFO[0m[0024] Pushing layer 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:d59b97174bce710b82c453d1c61c69fabd876428b1d9b57a93fe29aaa79d6fc7 to cache now 
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0024] COPY requirements.txt .                      
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/butler.png] 
+[36mINFO[0m[0024] COPY butler.png .                            
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/xss.html] 
+[36mINFO[0m[0024] COPY xss.html .                              
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/flask_app.py] 
+[36mINFO[0m[0024] COPY flask_app.py .                          
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] ENV PORT 8080                                
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] EXPOSE 8080                                  
+[36mINFO[0m[0024] cmd: EXPOSE                                  
+[36mINFO[0m[0024] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] CMD ["/usr/src/app/flask_app.py"]            
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0024] error uploading layer to cache: failed to push to destination 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:d59b97174bce710b82c453d1c61c69fabd876428b1d9b57a93fe29aaa79d6fc7: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '251647719696' 
+2020/02/11 18:45:08 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2020/02/11 18:45:08 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2020/02/11 18:45:08 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2020/02/11 18:45:08 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2020/02/11 18:45:08 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2020/02/11 18:45:08 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2020/02/11 18:45:08 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2020/02/11 18:45:08 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2020/02/11 18:45:08 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2020/02/11 18:45:08 pushed blob: sha256:b8cef3f34f32d8169a88d278685078d69cda70254f392dd955cf84ffd149cf7b
+2020/02/11 18:45:08 pushed blob: sha256:a01d106353a59abdefc01f1e8a41ba2181a9b3844098f4eb61d43929005c3c86
+2020/02/11 18:45:08 pushed blob: sha256:ef323c59917417e3ea5135dfe89c78e35559dfa13b32960068f6deb349429389
+2020/02/11 18:45:08 pushed blob: sha256:1e689141ca7a6fd32581cc23ba4394c233d9e8ebad69ea803206c57e94fb4fc2
+2020/02/11 18:45:08 pushed blob: sha256:e2dc4dd7f4f09264acb88276e3361bc5e83ab523dc3afbcecafa7e30d2031b42
+2020/02/11 18:45:08 pushed blob: sha256:3653597411765357b5094004a909f40ce7d2ef3aeedcbb3739516230dc6994e6
+2020/02/11 18:45:09 pushed blob: sha256:f1976c42e263675aec696b1972e28dcf4d2fc9f525c66a01c21a49745ca8b3b1
+2020/02/11 18:45:09 pushed blob: sha256:d4d4169b74e785b73151f06e888dbbbe4752b62f9b0cc29efbdd744f7c8f79ef
+2020/02/11 18:45:09 251647719696.dkr.ecr.us-east-2.amazonaws.com/*******/flask-**-sample:0.0.0-SNAPSHOT-PR-2-3: digest: sha256:bfa95992e46d2bcc92f18983c4b81a76ed77cb7e8cde06f7b06c6aebe2112f7f size: 2867
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-make-preview[0m
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-2-3/" Chart.yaml
+sed -i -e "s/version:.*/version: 0.0.0-SNAPSHOT-PR-2-3/" ../*/Chart.yaml
+sed -i -e "s|repository:.*|repository: 251647719696.dkr.ecr.us-east-2.amazonaws.com\/*******\/flask-**-sample|" values.yaml
+sed -i -e "s/tag:.*/tag: 0.0.0-SNAPSHOT-PR-2-3/" values.yaml
+echo "  version: 0.0.0-SNAPSHOT-PR-2-3" >> requirements.yaml
+** step helm build
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: chartmuseum.jenkins-x.io http://chartmuseum.jenkins-x.io
+Successfully added Helm repository chartmuseum.jenkins-x.io.
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-2-se-rvc2v-3[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-preview[0m
+Creating a preview
+Found commit author match for: ******* with email address: triet05@gmail.com
+Created environment *******-flask-**-sample-pr-2
+Namespace **-*******-flask-**-sample-pr-2 created 
+expose:
+  Annotations:
+    helm.sh/hook: post-install,post-upgrade
+    helm.sh/hook-delete-policy: hook-succeeded
+  config:
+    domain: jenkinsx.*******.people.a2z.com
+    exposer: Ingress
+    http: "true"
+preview:
+  image:
+    repository: 251647719696.dkr.ecr.us-east-2.amazonaws.com/*******/flask-**-sample
+    tag: 0.0.0-SNAPSHOT-PR-2-3
+Cloning the Jenkins X versions repo https://github.com/jenkins-x/jenkins-x-versions.git with ref refs/heads/master to /builder/home/.**/jenkins-x-versions
+
+Updating PipelineActivities *******-flask-**-sample-pr-2-3 which has status Running
+WARNING: preview application http://flask-**-sample.**-*******-flask-**-sample-pr-2.jenkinsx.*******.people.a2z.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.070673276s
+WARNING: preview application http://flask-**-sample.**-*******-flask-**-sample-pr-2.jenkinsx.*******.people.a2z.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.195623845s
+WARNING: preview application http://flask-**-sample.**-*******-flask-**-sample-pr-2.jenkinsx.*******.people.a2z.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 3.07200378s
+WARNING: preview application http://flask-**-sample.**-*******-flask-**-sample-pr-2.jenkinsx.*******.people.a2z.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 1.783022906s
+WARNING: preview application http://flask-**-sample.**-*******-flask-**-sample-pr-2.jenkinsx.*******.people.a2z.com not available, error was 503 503 Service Temporarily Unavailable, delaying for: 7.468410696s
+Preview application is now available at: http://flask-**-sample.**-*******-flask-**-sample-pr-2.jenkinsx.*******.people.a2z.com
