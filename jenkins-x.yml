@@ -15,7 +15,7 @@ pipelineConfig:
           name: code-scan
       postBuild:
         preSteps:
-        - sh: echo $APP_NAME:$PREVIEW_VERSION 
+        - sh: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && echo $APP_NAME:$PREVIEW_VERSION 
           name: container-image-scan-debug 
     release:
       build:
