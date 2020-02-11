@@ -16,5 +16,5 @@ pipelineConfig:
     release:
       promote:
         steps:
-        - sh: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x ./jq && [ $(aws ecr describe-image-scan-findings --repository-name trietlu/flask-jx-sample --image-id imageTag=$PREVIEW_VERSION --region us-east-2 --max-items 50 --page-size 50 | jq '.imageScanFindings.findingSeverityCounts.HIGH') -lt 150 ]
+        - sh: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x ./jq && [ $(aws ecr describe-image-scan-findings --repository-name trietlu/flask-jx-sample --image-id imageTag=$PREVIEW_VERSION --region us-east-2 --max-items 50 --page-size 50 | jq '.imageScanFindings.findingSeverityCounts.HIGH') -lt 15 ]
           name: container-image-scan
