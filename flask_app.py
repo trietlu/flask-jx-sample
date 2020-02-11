@@ -9,7 +9,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    return send_file("logo.png", mimetype='image/png')
+    return send_file("butler.png", mimetype='image/png')
 
 
 @app.route('/xss', methods =['GET'])
