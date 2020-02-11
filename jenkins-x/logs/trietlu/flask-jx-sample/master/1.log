@@ -1,0 +1,127 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-7d46n[0m
+{"level":"warn","ts":1581425318.545043,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581425318.545319,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-56rlr[0m
+{"level":"warn","ts":1581425320.5710642,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581425320.5727115,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-master-htklz-4dtld[0m
+{"level":"warn","ts":1581425337.9130814,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581425338.1799316,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/flask-**-sample.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b9b9ac51cd783f52694ca9ae26a1b672fd89e885
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Executing 3 build triggers                   
+[36mINFO[0m[0000] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0000] Checking for cached layer 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73... 
+[36mINFO[0m[0000] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0000] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0012] Taking snapshot of full filesystem...        
+[36mINFO[0m[0019] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0019] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0019] Taking snapshot of files...                  
+[36mINFO[0m[0019] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0019] cmd: /bin/sh                                 
+[36mINFO[0m[0019] args: [-c pip install --no-cache-dir -r requirements.txt] 
+You are using pip version 10.0.1, however version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0021] Taking snapshot of full filesystem...        
+[36mINFO[0m[0023] Pushing layer 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73 to cache now 
+[36mINFO[0m[0023] Using files from context: [/workspace/source] 
+[36mINFO[0m[0023] COPY . /usr/src/app                          
+[36mINFO[0m[0023] Taking snapshot of files...                  
+[36mINFO[0m[0023] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0023] COPY requirements.txt .                      
+[36mINFO[0m[0023] Taking snapshot of files...                  
+[36mINFO[0m[0023] ENV PORT 8080                                
+[36mINFO[0m[0023] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0023] EXPOSE 8080                                  
+[36mINFO[0m[0023] cmd: EXPOSE                                  
+[36mINFO[0m[0023] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0023] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0023] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0023] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0023] CMD ["app.py"]                               
+[36mINFO[0m[0023] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0023] error uploading layer to cache: failed to push to destination 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:f96ea06eb1dc1e896fb6ba60e374488f43e9918d4fe1cb30c5f26c8dea340a73: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '251647719696' 
+2020/02/11 12:49:24 pushed blob: sha256:e2a68e6c8e894942165fa927be866900aa37bc47abecd1e155980cb6ef3c6d2f
+2020/02/11 12:49:25 pushed blob: sha256:00bc1472f00916127aacc8432bd7afc46290b5eca62c05d8b0d4e198d5dbecbd
+2020/02/11 12:49:25 pushed blob: sha256:ce6e1c2a71b948436c478e3a1246c383f7b6eb267deadba8fa5546a02d4da338
+2020/02/11 12:49:25 pushed blob: sha256:4df637e3b381ec4cd9569eae25137e4ae9dc1530305b1be7865d9564c74b0613
+2020/02/11 12:49:25 pushed blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2020/02/11 12:49:25 pushed blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2020/02/11 12:49:25 pushed blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2020/02/11 12:49:25 pushed blob: sha256:c58e5b11574b8050240e1bac0ba74abb4d74a5f0371d8fe2e07bc99a512a1fd1
+2020/02/11 12:49:26 pushed blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2020/02/11 12:49:26 pushed blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2020/02/11 12:49:26 pushed blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2020/02/11 12:49:28 pushed blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2020/02/11 12:49:28 pushed blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2020/02/11 12:49:32 pushed blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2020/02/11 12:49:32 251647719696.dkr.ecr.us-east-2.amazonaws.com/*******/flask-**-sample:0.0.1: digest: sha256:121c06b74fa64bf891091f16e3bfcae40f20a6508a0827f697462dd9c9e1e252 size: 2385
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/flask-**-sample to an unshallow repository
+Generating change log from git ref 0148cc4d1c05f9166d570941ece95692eb983240 => ae4d0c3317a403eb39802dde39cdf989432acdc6
+Associating user x-0 in users.jenkins.io with email triet05@gmail.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit b9b9ac51cd783f52694ca9ae26a1b672fd89e885 with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for *******/flask-**-sample and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/*******/flask-**-sample/releases/tag/v0.0.1
+generated: /workspace/source/charts/flask-**-sample/templates/release.yaml
+Created Release flask-**-sample-0-0-1 resource in namespace **
+Updating PipelineActivity *******-flask-**-sample-master-1 with version 0.0.1
+Updated PipelineActivities *******-flask-**-sample-master-1 with release notes URL: https://github.com/*******/flask-**-sample/releases/tag/v0.0.1
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file flask-**-sample-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-htklz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app flask-**-sample version 0.0.1 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*******/environment-jenkinsx-staging/pull/1
+Added label updatebot to Pull Request https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/1
+Pull Request https://github.com/*******/environment-jenkinsx-staging/pull/1 is merged at sha 26bfc34e4a7f01d383e68d436fe526a08c32fe17
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names flask-**-sample, **-flask-**-sample, **-staging-flask-**-sample
