@@ -15,7 +15,7 @@ pipelineConfig:
           name: code-scan
       postBuild:
         preSteps:
-        - sh: echo $DOCKER_REGISTRY/$ORG/$APP_NAME:$PREVIEW_VERSION 
+        - sh: echo $APP_NAME:$PREVIEW_VERSION 
           name: container-image-scan-debug 
     release:
       build:
