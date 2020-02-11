@@ -1,0 +1,52 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-1-se-6wt2q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-cg52q[0m
+{"level":"warn","ts":1581426831.3588645,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581426831.3597019,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-1-se-6wt2q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-rrpq5[0m
+{"level":"warn","ts":1581426832.617566,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581426832.6188524,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-1-se-6wt2q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-1-se-6wt2q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-pr-1-se-6wt2q-hsvkn[0m
+{"level":"warn","ts":1581426838.645429,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581426838.9261448,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/flask-**-sample.git @ master in path /workspace/source"}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-1-se-6wt2q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b9b9ac51cd783f52694ca9ae26a1b672fd89e885,1:0536030e7a4a75ca1e5799752969236ff073e8b5
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 0536030e7a4a75ca1e5799752969236ff073e8b5: b9b9ac51cd783f52694ca9ae26a1b672fd89e885:
+DEBUG: ran git fetch --unshallow origin 0536030e7a4a75ca1e5799752969236ff073e8b5: b9b9ac51cd783f52694ca9ae26a1b672fd89e885: in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard b9b9ac51cd783f52694ca9ae26a1b672fd89e885
+DEBUG: ran git reset --hard b9b9ac51cd783f52694ca9ae26a1b672fd89e885 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git merge 0536030e7a4a75ca1e5799752969236ff073e8b5
+DEBUG: ran git merge 0536030e7a4a75ca1e5799752969236ff073e8b5 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e b9b9ac51cd783f52694ca9ae26a1b672fd89e885..HEAD
+Merged SHA 0536030e7a4a75ca1e5799752969236ff073e8b5 with commit message 'testing ...' into base branch master
+Merged SHA 43bdbea2a946ac808fe12fb89b14e905bdd95799 with commit message 'initial checkin' into base branch master
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-1-se-6wt2q-2[0m stage [32mfrom-build-pack[0m and container [32mstep-build-code-scan[0m
+WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
+Collecting python-taint
+  Downloading https://files.pythonhosted.org/packages/5c/79/5b70d3299cb7dea63e2b015651c5c7507d723911ff2837e104ebd7079491/python_taint-0.42-py3-none-any.whl (52kB)
+Installing collected packages: python-taint
+Successfully installed python-taint-0.42
+1 vulnerability found:
+Vulnerability 1:
+File: flask_app.py
+ > User input at line 17, source "request.args.get(":
+	 ~call_1 = ret_request.args.get('param', 'not set')
+Reassigned in:
+	File: flask_app.py
+	 > Line 17: param = ~call_1
+File: flask_app.py
+ > reaches line 22, sink "replace(":
+	~call_5 = ret_html.replace('{{ param }}', param)
+
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-code-scan'. The execution of the pipeline has stopped.[0m
