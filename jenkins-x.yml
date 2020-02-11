@@ -1,1 +1,20 @@
 buildPack: python
+pipelineConfig:
+  env:
+  - name: JENKINS_X_DOCKER_REGISTRY_SERVICE_HOST
+    value: \"$DOCKER_REGISTRY\"
+  - name: ORG
+    value: trietlu 
+  - name: JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT
+    value: "443"
+  pipelines:
+    pullRequest:
+      build:
+        preSteps:
+        - sh: pip3 install python-taint && python3 -m pyt flask_app.py
+          name: code-scan
+    release:
+      build:
+        preSteps:
+        - sh: echo $DOCKER_REGISTRY
+          name: container-image-scan
