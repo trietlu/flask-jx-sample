@@ -1,0 +1,91 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-7-se-9cxkz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-s2j96[0m
+{"level":"warn","ts":1581587663.1161244,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581587663.1169703,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-7-se-9cxkz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-6c54j[0m
+{"level":"warn","ts":1581587663.6950336,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581587663.6963415,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-7-se-9cxkz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-7-se-9cxkz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-pr-7-se-9cxkz-5bblk[0m
+{"level":"warn","ts":1581587674.726462,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581587674.9871452,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/flask-**-sample.git @ master in path /workspace/source"}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-7-se-9cxkz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:b07f40203eeed9d2c3d25589522dbc44b4838206,7:0a8f2bd451ed3b289a021cc76b103d4efb0605d9
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 0a8f2bd451ed3b289a021cc76b103d4efb0605d9: b07f40203eeed9d2c3d25589522dbc44b4838206:
+DEBUG: ran git fetch --unshallow origin 0a8f2bd451ed3b289a021cc76b103d4efb0605d9: b07f40203eeed9d2c3d25589522dbc44b4838206: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard b07f40203eeed9d2c3d25589522dbc44b4838206
+DEBUG: ran git reset --hard b07f40203eeed9d2c3d25589522dbc44b4838206 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 0a8f2bd451ed3b289a021cc76b103d4efb0605d9
+DEBUG: ran git merge 0a8f2bd451ed3b289a021cc76b103d4efb0605d9 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e b07f40203eeed9d2c3d25589522dbc44b4838206..HEAD
+Merged SHA 833a5ff3b6cba63b76664f0ecb5f1a7e90679c86 with commit message 'Merge commit '0a8f2bd451ed3b289a021cc76b103d4efb0605d9'' into base branch master
+Merged SHA 0a8f2bd451ed3b289a021cc76b103d4efb0605d9 with commit message 'scan container image during build' into base branch master
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-7-se-9cxkz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-code-scan[0m
+WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
+Collecting python-taint
+  Downloading https://files.pythonhosted.org/packages/5c/79/5b70d3299cb7dea63e2b015651c5c7507d723911ff2837e104ebd7079491/python_taint-0.42-py3-none-any.whl (52kB)
+Installing collected packages: python-taint
+Successfully installed python-taint-0.42
+No vulnerabilities found.
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-7-se-9cxkz-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-image-scan[0m
+0.0.0-SNAPSHOT-PR-7-1
+WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
+Collecting boto3
+  Downloading https://files.pythonhosted.org/packages/77/6a/b28b28c236f16fc2778196d83132161b1059afc965b4298e6091a0f98ebc/boto3-1.11.16-py2.py3-none-any.whl (128kB)
+Collecting jmespath<1.0.0,>=0.7.1 (from boto3)
+  Downloading https://files.pythonhosted.org/packages/83/94/7179c3832a6d45b266ddb2aac329e101367fbdb11f425f13771d27f225bb/jmespath-0.9.4-py2.py3-none-any.whl
+Collecting botocore<1.15.0,>=1.14.16 (from boto3)
+  Downloading https://files.pythonhosted.org/packages/5d/f9/c3cd58b9fe971ce4eb264521a04e72b8e4f377042bf10f2d39a862ccead7/botocore-1.14.16-py2.py3-none-any.whl (5.9MB)
+Collecting s3transfer<0.4.0,>=0.3.0 (from boto3)
+  Downloading https://files.pythonhosted.org/packages/69/79/e6afb3d8b0b4e96cefbdc690f741d7dd24547ff1f94240c997a26fa908d3/s3transfer-0.3.3-py2.py3-none-any.whl (69kB)
+Collecting docutils<0.16,>=0.10 (from botocore<1.15.0,>=1.14.16->boto3)
+  Downloading https://files.pythonhosted.org/packages/22/cd/a6aa959dca619918ccb55023b4cb151949c64d4d5d55b3f4ffd7eee0c6e8/docutils-0.15.2-py3-none-any.whl (547kB)
+Collecting urllib3<1.26,>=1.20; python_version != "3.4" (from botocore<1.15.0,>=1.14.16->boto3)
+  Downloading https://files.pythonhosted.org/packages/e8/74/6e4f91745020f967d09332bb2b8b9b10090957334692eb88ea4afe91b77f/urllib3-1.25.8-py2.py3-none-any.whl (125kB)
+Collecting python-dateutil<3.0.0,>=2.1 (from botocore<1.15.0,>=1.14.16->boto3)
+  Downloading https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl (227kB)
+Collecting six>=1.5 (from python-dateutil<3.0.0,>=2.1->botocore<1.15.0,>=1.14.16->boto3)
+  Downloading https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+Installing collected packages: jmespath, docutils, urllib3, six, python-dateutil, botocore, s3transfer, boto3
+Successfully installed boto3-1.11.16 botocore-1.14.16 docutils-0.15.2 jmespath-0.9.4 python-dateutil-2.8.1 s3transfer-0.3.3 six-1.14.0 urllib3-1.25.8
+Traceback (most recent call last):
+  File "image_scan.py", line 9, in <module>
+    client = boto3.client('ecr')
+  File "/usr/local/lib/python3.6/site-packages/boto3/__init__.py", line 91, in client
+    return _get_default_session().client(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/boto3/session.py", line 263, in client
+    aws_session_token=aws_session_token, config=config)
+  File "/usr/local/lib/python3.6/site-packages/botocore/session.py", line 835, in create_client
+    client_config=config, api_version=api_version)
+  File "/usr/local/lib/python3.6/site-packages/botocore/client.py", line 83, in create_client
+    verify, credentials, scoped_config, client_config, endpoint_bridge)
+  File "/usr/local/lib/python3.6/site-packages/botocore/client.py", line 247, in _get_client_args
+    verify, credentials, scoped_config, client_config, endpoint_bridge)
+  File "/usr/local/lib/python3.6/site-packages/botocore/args.py", line 73, in get_client_args
+    endpoint_url, is_secure, scoped_config)
+  File "/usr/local/lib/python3.6/site-packages/botocore/args.py", line 153, in compute_client_args
+    s3_config=s3_config,
+  File "/usr/local/lib/python3.6/site-packages/botocore/args.py", line 217, in _compute_endpoint_config
+    return self._resolve_endpoint(**resolve_endpoint_kwargs)
+  File "/usr/local/lib/python3.6/site-packages/botocore/args.py", line 300, in _resolve_endpoint
+    service_name, region_name, endpoint_url, is_secure)
+  File "/usr/local/lib/python3.6/site-packages/botocore/client.py", line 321, in resolve
+    service_name, region_name)
+  File "/usr/local/lib/python3.6/site-packages/botocore/regions.py", line 122, in construct_endpoint
+    partition, service_name, region_name)
+  File "/usr/local/lib/python3.6/site-packages/botocore/regions.py", line 135, in _endpoint_for_partition
+    raise NoRegionError()
+botocore.exceptions.NoRegionError: You must specify a region.
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-build-container-image-scan'. The execution of the pipeline has stopped.[0m
