@@ -6,7 +6,7 @@ import sys
 import argparse
 
 
-client = boto3.client('ecr')
+client = boto3.client('ecr', region_name='us-east-2')
 
 
 def main():
