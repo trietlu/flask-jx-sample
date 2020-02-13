@@ -38,11 +38,11 @@ def scan(imagetag, retries, cvecount):
     status_code = 0
     tries = 0
 
-    response = client.describe_image_scan_findings\
-      (registryId='251647719696', repositoryName='trietlu/flask-jx-sample',
-       imageId={'imageTag': imagetag}, maxResults=1000)
-
     while tries < retries:
+
+        response = client.describe_image_scan_findings \
+            (registryId='251647719696', repositoryName='trietlu/flask-jx-sample',
+             imageId={'imageTag': imagetag}, maxResults=1000)
 
         status = response['imageScanStatus']['status']
 
