@@ -53,7 +53,10 @@ def scan(imagetag, retries, cvecount):
         elif status == 'COMPLETE':
             if response['imageScanFindings']['findingSeverityCounts']['HIGH'] >= cvecount:
                 status_code = 1
+                print('CVE findings failed by policy')
                 print(response['imageScanFindings']['findingSeverityCounts'])
+            else:
+                print('CVE findings permitted by policy')
             break
         else:
             # scan failed, so can't flag container image as bad
