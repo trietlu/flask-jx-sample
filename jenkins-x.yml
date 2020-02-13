@@ -11,10 +11,9 @@ pipelineConfig:
     pullRequest:
       build:
         preSteps:
-        - sh: pip3 install python-taint && python3 -m pyt flask_app.py
+        - sh: pip3 install --user python-taint && python3 -m pyt flask_app.py
           name: code-scan
-    release:
-      promote:
+      postBuild:
         steps:
-        - sh: curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && unzip awscliv2.zip && ./aws/install && wget -O jq https://github.com/stedolan/jq/releases/download/jq-1.6/jq-linux64 && chmod +x ./jq && [ $(aws ecr describe-image-scan-findings --repository-name trietlu/flask-jx-sample --image-id imageTag=$PREVIEW_VERSION --region us-east-2 --max-items 50 --page-size 50 | jq '.imageScanFindings.findingSeverityCounts.HIGH') -lt 15 ]
-          name: container-image-scan
+          - sh: pip3 install --user boto3 && python3 image_scan.py -i $PREVIEW_VERSION -e $DOCKER_REGISTRY -n $ORG/$APP_NAME --cvecount 150
+            name: container-image-scan
