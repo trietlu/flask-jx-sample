@@ -13,6 +13,8 @@ pipelineConfig:
         preSteps:
         - sh: pip3 install python-taint && python3 -m pyt flask_app.py
           name: code-scan
+        - sh: echo $PREVIEW_VERSION && pip3 install boto3 && python3 image_scan.py -i $PREVIEW_VERSION --cvecount 15
+          name: container-image-scan
     release:
       promote:
         steps:
