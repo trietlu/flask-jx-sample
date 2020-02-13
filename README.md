@@ -1,3 +1,3 @@
-# python-http
+# CI/CD for Flask app
 
-Simple Hello World Python HTTP server
+Demonstrates a DevSecOps pipeline for a simple HTTP Flask app
