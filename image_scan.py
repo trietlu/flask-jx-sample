@@ -6,15 +6,16 @@ import sys
 import argparse
 
 
-client = boto3.client('ecr', region_name='us-east-2')
-
-
 def main():
     parser = argparse.ArgumentParser(
       description='imagescan - scan a container image in ECR')
 
     parser.add_argument('-r', '--retries', action='store', default=15, type=int,
                         required=False, help='number of retries when waiting for image scan to complete')
+    parser.add_argument('-n', '--repositoryname', action='store',
+                        required=True, help='name of repository')
+    parser.add_argument('-e', '--endpoint', action='store',
+                        required=True, help='endpoint of registry')
     parser.add_argument('-i', '--imagetag', action='store',
                         required=True, help='id of container image')
     parser.add_argument('-c', '--cvecount', action='store', default=15, type=int,
@@ -25,7 +26,8 @@ def main():
     exit_code = 0
 
     try:
-        exit_code = scan(args.imagetag, args.retries, args.cvecount)
+        exit_code = scan(args.endpoint, args.repositoryname,
+                         args.imagetag, args.retries, args.cvecount)
     except Exception as e:
         print(e)
         exit_code = 1
@@ -33,7 +35,13 @@ def main():
         sys.exit(exit_code)
 
 
-def scan(imagetag, retries, cvecount):
+def scan(endpoint, repositoryName, imagetag, retries, cvecount):
+
+    parsed_endpoint = endpoint.split('.')
+    registry = parsed_endpoint[0]
+    region = parsed_endpoint[3]
+
+    client = boto3.client('ecr', region_name=region)
 
     status_code = 0
     tries = 0
@@ -41,7 +49,7 @@ def scan(imagetag, retries, cvecount):
     while tries < retries:
 
         response = client.describe_image_scan_findings \
-            (registryId='251647719696', repositoryName='trietlu/flask-jx-sample',
+            (registryId=registry, repositoryName=repositoryName,
              imageId={'imageTag': imagetag}, maxResults=1000)
 
         status = response['imageScanStatus']['status']
@@ -66,4 +74,5 @@ def scan(imagetag, retries, cvecount):
 
 
 if __name__ == '__main__':
+
     main()
