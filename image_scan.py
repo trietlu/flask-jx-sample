@@ -46,6 +46,8 @@ def scan(endpoint, repositoryName, imagetag, retries, cvecount):
     status_code = 0
     tries = 0
 
+    print(f'Doing CVE scan of {repositoryName}:{imagetag} in registry {endpoint}')
+
     while tries < retries:
 
         response = client.describe_image_scan_findings \
