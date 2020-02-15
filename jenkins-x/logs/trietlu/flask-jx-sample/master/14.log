@@ -1,0 +1,39 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-zpgbs[0m
+{"level":"warn","ts":1581735913.8812382,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581735913.8832357,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-tqxjk[0m
+{"level":"warn","ts":1581735914.7960508,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581735914.8001683,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-master-tts4z-gq9qm[0m
+Unable to retrieve container logs for docker://8053876f5f6377722b0c33aa660633edf558c513bd452205fb5bef87b30fa226
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Unable to retrieve container logs for docker://537efcb4c210a6815a83f65096c304f30f4ad2d47cf3b15165cc86fd2d7f6c3c
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Unable to retrieve container logs for docker://86332fe84db3ffc3d70811aa70e846131b8c6d287cc7c770268560411fd30456
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+Unable to retrieve container logs for docker://413c3d2b1907c8c3544de9dbf72353239cbca5cfe38f4220f668ef5cf5800d94
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+Unable to retrieve container logs for docker://a1d82fcf817b3bfcf65f26cb25bf6e11b19cdd63ffebecd9cb212581c8e32aaa
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+Unable to retrieve container logs for docker://bc2ce7b8bab23be18f7624ba9691e35bc4d37b52a758de86f68fb7c32e7c360e
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Unable to retrieve container logs for docker://ca3657ac94825dc5ace73e8692c98ab686787d8bba378056a0dd61c04e556cb6
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Unable to retrieve container logs for docker://a071b700c599561b850a65ad6dd3a068982bb328fe335faa2d109d3845f9f3a1
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-tts4z-14[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+Unable to retrieve container logs for docker://fd42225fca2d3c697f7009e8c74b19d4f855c9f8e62c6f04cfbaa850d6c27de7
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
