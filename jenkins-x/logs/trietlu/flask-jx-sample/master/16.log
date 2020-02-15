@@ -1,0 +1,156 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-k8zdx[0m
+{"level":"warn","ts":1581736971.233507,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581736971.233772,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-gf956[0m
+{"level":"warn","ts":1581736972.234171,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581736972.2353802,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-master-rwp4f-sqf8d[0m
+{"level":"warn","ts":1581736977.2969742,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581736977.5846336,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/flask-**-sample.git @ v0.0.15 in path /workspace/source"}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:903cf243d57e07538953350fd3e090f614a93f55
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+----------------------------------------------------------------------
+Ran 0 tests in 0.000s
+
+OK
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Error while retrieving image from cache: getting file info: stat /workspace/sha256:43780a8431c53f4afd734ad795e03127c0c607337a60639c5903a51a03535c22: no such file or directory 
+[36mINFO[0m[0000] Downloading base image python:onbuild        
+[36mINFO[0m[0000] Executing 3 build triggers                   
+[36mINFO[0m[0000] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0000] Checking for cached layer 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:d59b97174bce710b82c453d1c61c69fabd876428b1d9b57a93fe29aaa79d6fc7... 
+[36mINFO[0m[0000] No cached layer found for cmd RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0000] Unpacking rootfs as cmd RUN pip install --no-cache-dir -r requirements.txt requires it. 
+[36mINFO[0m[0012] Taking snapshot of full filesystem...        
+[36mINFO[0m[0019] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0019] COPY requirements.txt /usr/src/app/          
+[36mINFO[0m[0019] Taking snapshot of files...                  
+[36mINFO[0m[0019] RUN pip install --no-cache-dir -r requirements.txt 
+[36mINFO[0m[0019] cmd: /bin/sh                                 
+[36mINFO[0m[0019] args: [-c pip install --no-cache-dir -r requirements.txt] 
+Collecting Flask (from -r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/9b/93/628509b8d5dc749656a9641f4caf13540e2cdec85276964ff8f43bbb1d3b/Flask-1.1.1-py2.py3-none-any.whl (94kB)
+Collecting Jinja2>=2.10.1 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/27/24/4f35961e5c669e96f6559760042a55b9bcfcdb82b9bdb3c8753dbe042e35/Jinja2-2.11.1-py2.py3-none-any.whl (126kB)
+Collecting itsdangerous>=0.24 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/76/ae/44b03b253d6fade317f32c24d100b3b35c2239807046a4c953c7b89fa49e/itsdangerous-1.1.0-py2.py3-none-any.whl
+Collecting Werkzeug>=0.15 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/ba/a5/d6f8a6e71f15364d35678a4ec8a0186f980b3bd2545f40ad51dd26a87fb1/Werkzeug-1.0.0-py2.py3-none-any.whl (298kB)
+Collecting click>=5.1 (from Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/fa/37/45185cb5abbc30d7257104c434fe0b07e5a195a6847506c074527aa599ec/Click-7.0-py2.py3-none-any.whl (81kB)
+Collecting MarkupSafe>=0.23 (from Jinja2>=2.10.1->Flask->-r requirements.txt (line 2))
+  Downloading https://files.pythonhosted.org/packages/b2/5f/23e0023be6bb885d00ffbefad2942bc51a620328ee910f64abe5a8d18dd1/MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl
+Installing collected packages: MarkupSafe, Jinja2, itsdangerous, Werkzeug, click, Flask
+Successfully installed Flask-1.1.1 Jinja2-2.11.1 MarkupSafe-1.1.1 Werkzeug-1.0.0 click-7.0 itsdangerous-1.1.0
+You are using pip version 10.0.1, however version 20.0.2 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+[36mINFO[0m[0021] Taking snapshot of full filesystem...        
+[36mINFO[0m[0024] Pushing layer 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:d59b97174bce710b82c453d1c61c69fabd876428b1d9b57a93fe29aaa79d6fc7 to cache now 
+[36mINFO[0m[0024] Using files from context: [/workspace/source] 
+[36mINFO[0m[0024] COPY . /usr/src/app                          
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/requirements.txt] 
+[36mINFO[0m[0024] COPY requirements.txt .                      
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/butler.png] 
+[36mINFO[0m[0024] COPY butler.png .                            
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/xss.html] 
+[36mINFO[0m[0024] COPY xss.html .                              
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] Using files from context: [/workspace/source/flask_app.py] 
+[36mINFO[0m[0024] COPY flask_app.py .                          
+[36mINFO[0m[0024] Taking snapshot of files...                  
+[36mINFO[0m[0024] ENV PORT 8080                                
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] EXPOSE 8080                                  
+[36mINFO[0m[0024] cmd: EXPOSE                                  
+[36mINFO[0m[0024] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] ENTRYPOINT ["python"]                        
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0024] CMD ["/usr/src/app/flask_app.py"]            
+[36mINFO[0m[0024] No files changed in this command, skipping snapshotting. 
+[33mWARN[0m[0025] error uploading layer to cache: failed to push to destination 251647719696.dkr.ecr.us-east-2.amazonaws.com/todo/cache:d59b97174bce710b82c453d1c61c69fabd876428b1d9b57a93fe29aaa79d6fc7: NAME_UNKNOWN: The repository with name 'todo/cache' does not exist in the registry with id '251647719696' 
+2020/02/15 03:23:24 existing blob: sha256:06854774e2f35e4763103a446112c67322913a6177bea69eb49663e0166e6d6d
+2020/02/15 03:23:24 existing blob: sha256:1c7fe136a31e13a1c879245672184ced3b9fc590989ba42a522a57b071a9c1aa
+2020/02/15 03:23:24 existing blob: sha256:ece825d3308bbf98f708d95475ccd880497a1e2979ff4ef2534d49049a18488f
+2020/02/15 03:23:24 existing blob: sha256:f0db43b9b8da254cebc77bf871006df01219e195b9853616b9f708f124a00f3a
+2020/02/15 03:23:24 existing blob: sha256:2d21c767035c4593de8bf7ad9781aa83ba110871d1a50871192f4e3480e6f11d
+2020/02/15 03:23:24 existing blob: sha256:e10b68fb77e6e91453cd4c1b02e2d77aa23a857cd8eb250617129d074478e1a5
+2020/02/15 03:23:24 existing blob: sha256:e2c0fb34dff3a1d32346b92e53fb88a14d1987b402a2348cb379c039687fabe2
+2020/02/15 03:23:24 existing blob: sha256:490280dbcfb772eb5731f059e38fcfacaeb75b4d005af7c249fd51926db2bd62
+2020/02/15 03:23:24 existing blob: sha256:e96bc319bce0351d1157092352bc5f85f8800c745388e60e86d06dec99285b45
+2020/02/15 03:23:25 pushed blob: sha256:a81c7d0658533a6fe1b75ea8799b370e835ca658084923690ed142b12fbc1c5f
+2020/02/15 03:23:25 pushed blob: sha256:87576bb76fe12288071a06892e92c364821702fd515a8aa687404116ef3055e1
+2020/02/15 03:23:25 pushed blob: sha256:364b5e01e7da0bea295f90198d0d60f6359ae8b126b486f57e6368c7a5316ba6
+2020/02/15 03:23:25 pushed blob: sha256:7f61e9c6011bbd63bcfb0ceda086acb4bb4040da210e09c199d4d4cc009511f0
+2020/02/15 03:23:25 pushed blob: sha256:0e4dbccdf4d33c565674513f4865120f47f00dbc33f5976b60b38fb895e5db6c
+2020/02/15 03:23:25 pushed blob: sha256:07b3aaa37a86f6ecd584e05a430a954f432f9cd32b2f1e1da4e6c31d5e8e2c7f
+2020/02/15 03:23:25 pushed blob: sha256:a17befc5f6667cf1e5abd4f768d3df4e835ff9108e1c2a24aa4691252bad2643
+2020/02/15 03:23:25 pushed blob: sha256:2dc43266b138332eb1e4207a90026e8051753d2382497c940846d73f444ef122
+2020/02/15 03:23:26 251647719696.dkr.ecr.us-east-2.amazonaws.com/*******/flask-**-sample:0.0.15: digest: sha256:b3c0e696db0746187fa16e36af66c6cd9a119337a68f1052b60a755356229c80 size: 2867
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/flask-**-sample to an unshallow repository
+Generating change log from git ref ce6d71c5dd282b3a57d776b3f92f9a6a6ab141bd => 7cd704f12f3ce23a5f814c50d80901532f484f15
+Associating user ******* in users.jenkins.io with email 40174644+*******@users.noreply.github.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user ******* in users.jenkins.io
+WARNING: Failed to enrich commit 91c339432942c02db02dd66694714c7b81883870 with issues: User.jenkins.io "*******" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+WARNING: Failed to enrich commit 91c339432942c02db02dd66694714c7b81883870 with issues: users.jenkins.io "x-0" already exists
+Finding issues in commit messages using git format
+Associating user ******* in users.jenkins.io with email 40174644+*******@users.noreply.github.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user ******* in users.jenkins.io
+WARNING: Failed to enrich commit 929d0118bbd90ffad648b7042f74b4eafcfa2af2 with issues: User.jenkins.io "*******" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+WARNING: Failed to enrich commit 929d0118bbd90ffad648b7042f74b4eafcfa2af2 with issues: users.jenkins.io "x-0" already exists
+Associating user ******* in users.jenkins.io with email 40174644+*******@users.noreply.github.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user ******* in users.jenkins.io
+WARNING: Failed to enrich commit 21b434ab973385f35157c36f2d160cc51c590243 with issues: User.jenkins.io "*******" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+WARNING: Failed to enrich commit 21b434ab973385f35157c36f2d160cc51c590243 with issues: users.jenkins.io "x-0" already exists
+WARNING: No release found for *******/flask-**-sample and tag v0.0.15 so creating a new release
+Updated the release information at https://github.com/*******/flask-**-sample/releases/tag/v0.0.15
+generated: /workspace/source/charts/flask-**-sample/templates/release.yaml
+Created Release flask-**-sample-0-0-15 resource in namespace **
+Updating PipelineActivity *******-flask-**-sample-master-16 with version 0.0.15
+Updated PipelineActivities *******-flask-**-sample-master-16 with release notes URL: https://github.com/*******/flask-**-sample/releases/tag/v0.0.15
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file flask-**-sample-0.0.15.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-rwp4f-16[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app flask-**-sample version 0.0.15 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/*******/environment-jenkinsx-staging/pull/15
+Added label updatebot to Pull Request https://github.com/*******/environment-jenkinsx-staging/pull/15
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/15
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/15
+got git provider status pending from PR https://github.com/*******/environment-jenkinsx-staging/pull/15
+Pull Request https://github.com/*******/environment-jenkinsx-staging/pull/15 is merged at sha c597a90679111dbd728afdab09e0d5a230ac627b
+Pull Request merged but we are not waiting for the update pipeline to complete!
