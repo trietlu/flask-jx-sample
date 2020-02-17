@@ -1,0 +1,40 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-k5k2f[0m
+{"level":"warn","ts":1581961637.0530553,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581961637.0535939,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-7gf48[0m
+{"level":"warn","ts":1581961638.1842575,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1581961638.1853921,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-master-k765k-4xh6c[0m
+{"level":"warn","ts":1581961645.2219186,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1581961645.5238388,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/flask-**-sample.git @ v0.0.20 in path /workspace/source"}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Unable to retrieve container logs for docker://3d731b5a6fdd9629c44303a5dc3fb318adb91b6119998f6feeb3695feeec7a49
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Unable to retrieve container logs for docker://256da3c1db5fa25308fb2f145a63e9b08f3d2a31eeba106f10d4877e73c8d6c9
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+Unable to retrieve container logs for docker://1f393915a45460992fa5a6d8d973288051b7a7b634e034d8d5dfe1e541ac04fb
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+Unable to retrieve container logs for docker://e77b0f7a94b089e4451b420b3acec92fc8eb5de9feddf145ad888178b5c056c0
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+Unable to retrieve container logs for docker://bed5446dd00bbf989a5774fef53b2c193e50bdedec6d8a372178b0c9d8c321d6
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Unable to retrieve container logs for docker://0cb90212dfc6ed7d5b9bd9ff6e49fcd472a98a60efe7b098accdef1ebf28d87b
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+Unable to retrieve container logs for docker://9a8723abc26aa1561c630fe1e8596c197a727d176d9fb479060889cb358e92df
+
+Showing logs for build [32mtrietlu-flask-jx-sample-master-k765k-21[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+Unable to retrieve container logs for docker://5c78bcb3120a05744be33f4f33225737e58a50aea417131af9e18fcfade94c2d
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-jx-promote'. The execution of the pipeline has stopped.[0m
