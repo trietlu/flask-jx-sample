@@ -15,5 +15,5 @@ pipelineConfig:
           name: code-scan
       postBuild:
         steps:
-          - sh: pip3 install --user boto3 && python3 image_scan.py -i $PREVIEW_VERSION -e $DOCKER_REGISTRY -n $ORG/$APP_NAME --cvecount 150
+          - sh: pip3 install --user boto3 && python3 image_scan.py -i $PREVIEW_VERSION -e $DOCKER_REGISTRY -n $ORG/$APP_NAME --cvecount 15
             name: container-image-scan
