@@ -11,6 +11,8 @@ pipelineConfig:
     overrides:
     - pipeline: pullRequest
       stage: build
+      name: python-unittest
+      type: replace
       steps:
       - name: python-unittest
         sh: python3 - m unittest 
