@@ -11,8 +11,8 @@ pipelineConfig:
     pullRequest:
       build:
         preSteps:
-        - sh: cat tests/test_flask_app.py
-          name: check-file
+        - sh: python3 -m unittest
+          name: unit-test
         - sh: pip3 install --user python-taint && python3 -m pyt flask_app.py
           name: code-scan
       postBuild:
