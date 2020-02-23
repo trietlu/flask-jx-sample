@@ -8,6 +8,12 @@ pipelineConfig:
   - name: JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT
     value: "443"
   pipelines:
+    overrides:
+    - pipeline: pullRequest
+      stage: build
+      steps:
+      - name: python-unittest
+        sh: python3 - m unittest 
     pullRequest:
       build:
         preSteps:
