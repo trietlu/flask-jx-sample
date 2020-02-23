@@ -1,6 +1,6 @@
 FROM python:onbuild
 COPY requirements.txt .
-COPY butler.png .
+COPY *.png .
 COPY xss.html .
 COPY flask_app.py .
 ENV PORT 8080
