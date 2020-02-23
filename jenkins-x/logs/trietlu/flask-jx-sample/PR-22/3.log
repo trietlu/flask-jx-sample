@@ -1,0 +1,62 @@
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-79wxl[0m
+{"level":"warn","ts":1582465576.2930994,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582465576.2937338,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-s952l[0m
+{"level":"warn","ts":1582465576.7226584,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1582465576.7267702,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-trietlu-flask-jx-sample-pr-22-s-6fk54-66pn4[0m
+{"level":"warn","ts":1582465581.7643037,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1582465582.0484724,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/*******/flask-**-sample.git @ master in path /workspace/source"}
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:2a929b3618920b0b0ead79f71dc8aa3e56708281,22:65e0cfa7be95a2612836f54ab1c91e2832f03f57
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow 65e0cfa7be95a2612836f54ab1c91e2832f03f57: 2a929b3618920b0b0ead79f71dc8aa3e56708281:
+DEBUG: ran git fetch --unshallow origin 65e0cfa7be95a2612836f54ab1c91e2832f03f57: 2a929b3618920b0b0ead79f71dc8aa3e56708281: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 2a929b3618920b0b0ead79f71dc8aa3e56708281
+DEBUG: ran git reset --hard 2a929b3618920b0b0ead79f71dc8aa3e56708281 in 
+DEBUG: JX_LOG_LEVEL=error LC_ALL=C git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge 65e0cfa7be95a2612836f54ab1c91e2832f03f57
+DEBUG: ran git merge 65e0cfa7be95a2612836f54ab1c91e2832f03f57 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 2a929b3618920b0b0ead79f71dc8aa3e56708281..HEAD
+Merged SHA 65e0cfa7be95a2612836f54ab1c91e2832f03f57 with commit message 'unit testing correction' into base branch master
+Merged SHA c1860b7c2583930b7b73225e3aff48e29427eda6 with commit message 'unit testing correction' into base branch master
+Merged SHA 0d5f24bf2fe2c1dc097f8e63260894606107f39f with commit message 'unit testing correction' into base branch master
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-build-python-unittest[0m
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mtrietlu-flask-jx-sample-pr-22-s-6fk54-3[0m stage [32mfrom-build-pack[0m and container [32mstep-postbuild-container-image-scan[0m
+WARNING: Running pip install with root privileges is generally not a good idea. Try `pip3 install --user` instead.
+Collecting boto3
+  Downloading https://files.pythonhosted.org/packages/cc/3c/00bc2a81bb9d9a0d708bb7f63d63fbb92aef63bc459b01bf317431ca7220/boto3-1.12.5-py2.py3-none-any.whl (128kB)
+Collecting s3transfer<0.4.0,>=0.3.0 (from boto3)
+  Downloading https://files.pythonhosted.org/packages/69/79/e6afb3d8b0b4e96cefbdc690f741d7dd24547ff1f94240c997a26fa908d3/s3transfer-0.3.3-py2.py3-none-any.whl (69kB)
+Collecting botocore<1.16.0,>=1.15.5 (from boto3)
+  Downloading https://files.pythonhosted.org/packages/40/2b/f290e79241a6b07ab955a65d0395128bb300711ef37589a01696de1c5b5f/botocore-1.15.5-py2.py3-none-any.whl (5.9MB)
+Collecting jmespath<1.0.0,>=0.7.1 (from boto3)
+  Downloading https://files.pythonhosted.org/packages/83/94/7179c3832a6d45b266ddb2aac329e101367fbdb11f425f13771d27f225bb/jmespath-0.9.4-py2.py3-none-any.whl
+Collecting docutils<0.16,>=0.10 (from botocore<1.16.0,>=1.15.5->boto3)
+  Downloading https://files.pythonhosted.org/packages/22/cd/a6aa959dca619918ccb55023b4cb151949c64d4d5d55b3f4ffd7eee0c6e8/docutils-0.15.2-py3-none-any.whl (547kB)
+Collecting urllib3<1.26,>=1.20; python_version != "3.4" (from botocore<1.16.0,>=1.15.5->boto3)
+  Downloading https://files.pythonhosted.org/packages/e8/74/6e4f91745020f967d09332bb2b8b9b10090957334692eb88ea4afe91b77f/urllib3-1.25.8-py2.py3-none-any.whl (125kB)
+Collecting python-dateutil<3.0.0,>=2.1 (from botocore<1.16.0,>=1.15.5->boto3)
+  Downloading https://files.pythonhosted.org/packages/d4/70/d60450c3dd48ef87586924207ae8907090de0b306af2bce5d134d78615cb/python_dateutil-2.8.1-py2.py3-none-any.whl (227kB)
+Collecting six>=1.5 (from python-dateutil<3.0.0,>=2.1->botocore<1.16.0,>=1.15.5->boto3)
+  Downloading https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl
+Installing collected packages: docutils, urllib3, six, python-dateutil, jmespath, botocore, s3transfer, boto3
+Successfully installed boto3-1.12.5 botocore-1.15.5 docutils-0.15.2 jmespath-0.9.4 python-dateutil-2.8.1 s3transfer-0.3.3 six-1.14.0 urllib3-1.25.8
+Doing CVE scan of *******/flask-**-sample:0.0.0-SNAPSHOT-PR-22-3 in registry 251647719696.dkr.ecr.us-east-2.amazonaws.com
+An error occurred (ImageNotFoundException) when calling the DescribeImageScanFindings operation: The image with imageId {imageDigest:'null', imageTag:'0.0.0-SNAPSHOT-PR-22-3'} does not exist within the repository with name '*******/flask-**-sample' in the registry with id '251647719696'
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-postbuild-container-image-scan'. The execution of the pipeline has stopped.[0m
