@@ -8,9 +8,19 @@ pipelineConfig:
   - name: JENKINS_X_DOCKER_REGISTRY_SERVICE_PORT
     value: "443"
   pipelines:
+    overrides:
+    - pipeline: pullRequest
+      stage: build
+      name: python-unittest
+      type: replace
+      steps:
+      - name: python-unittest
+        sh: python3 - m unittest 
     pullRequest:
       build:
         preSteps:
+        - sh: python3 -m unittest
+          name: unit-test
         - sh: pip3 install --user python-taint && python3 -m pyt flask_app.py
           name: code-scan
       postBuild:
